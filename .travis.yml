@@ -1,7 +1,10 @@
-lnguagae:python
+lnguagae: python
 python:
   - "3.6"
 install:
   - make deps
 script:
+  - make lint
   - make test
+after_success:
+    make docker_build
